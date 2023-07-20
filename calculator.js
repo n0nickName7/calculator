@@ -9,7 +9,7 @@ keys.addEventListener('click', e => {
         const key = e.target
         const action = key.dataset.action
         const keyContent = key.textContent
-        const displayedNum = display.textContent
+        let displayedNum = display.textContent
         const previousKeyType = calculator.dataset.previousKeyType
 
         if(!action) {
@@ -97,11 +97,9 @@ keys.addEventListener('click', e => {
         }
         if (action === 'negative'){
             if (!displayedNum.includes('-')) {
-                display.textContent = '-' + displayedNum     
+                display.textContent = '-'  
             } 
-            if (!action) {
-                display.textContent = '-' + keyContent
-            }
+           
             calculator.dataset.previousKeyType = 'negative'
         }
 
